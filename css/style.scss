@@ -1,0 +1,134 @@
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@500;700;900&display=swap');
+
+:root {
+  --Pale-blue: hsl(225, 100%, 94%);
+  --Bright-blue: hsl(245, 75%, 52%);
+
+  --Desaturated-blue: hsl(224, 23%, 55%);
+  --Very-pale-blue: hsl(225, 100%, 98%);
+  --Dark-blue: hsl(223, 47%, 23%);
+
+  --fs-default: 16px;
+
+  --fw-regular: 500;
+  --fw-bold: 700;
+  --fw-black: 900;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+img,
+svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+button {
+  border: none;
+  background: transparent;
+}
+
+body {
+  background-color: var(--Pale-blue);
+  font-family: 'Red Hat Display', sans-serif;
+  font-size: var(--fs-default);
+  font-weight: var(--fw-regular);
+  color: var(--Desaturated-blue);
+  display: grid;
+  place-content: center;
+  min-height: 100vh;
+}
+.grid-center {
+  display: grid;
+  place-content: center;
+}
+main {
+  padding: 3em 1em;
+  min-width: 100vw;
+  min-height: 100vh;
+  background: url(/images/pattern-background-desktop.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  @media (max-width: 700px) {
+    background: url(/images/pattern-background-mobile.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+}
+.card {
+  border-radius: 1.5em;
+  overflow: hidden;
+  display: grid;
+  grid-template-rows: auto 1fr;
+  max-width: 440px;
+  text-align: center;
+  .content {
+    --hover-color: 245, 75%, 52%, 0.7;
+    padding: 2.5em 2.7em;
+    background-color: white;
+    gap: 1.2em;
+    h1 {
+      color: var(--Dark-blue);
+      font-weight: var(--fw-black);
+    }
+    .lead {
+      line-height: 1.5;
+      padding: 0 1.2em;
+    }
+    .plan {
+      background-color: var(--Very-pale-blue);
+      padding: 1.5em;
+      border-radius: 0.5em;
+      grid-template-columns: max-content auto 1fr;
+      grid-template-rows: repeat(2, 1fr);
+      column-gap: 1.2em;
+      img {
+        grid-row: span 2;
+      }
+      .plan-name {
+        color: var(--Dark-blue);
+        font-weight: var(--fw-bold);
+      }
+      .price {
+        grid-column: 2/3;
+      }
+      .cta-2 {
+        justify-self: end;
+        grid-row: span 2;
+        a {
+          color: var(--Bright-blue);
+          font-weight: var(--fw-bold);
+          &:is(:hover, :active) {
+            text-decoration: none;
+            color: hsla(var(--hover-color));
+          }
+        }
+        
+      }
+    }
+    .cta-1 {
+      margin: 0.7em 0;
+      padding: 1em 1em;
+      border-radius: 0.7em;
+      background-color: var(--Bright-blue);
+      color: var(--Very-pale-blue);
+      font-weight: var(--fw-bold);
+      box-shadow: 0px 17px 13px 1px hsl(245deg 75% 52% / 18%);
+      &:is(:hover, :active) {
+        background-color: hsla(var(--hover-color));
+      }
+    }
+    .cta-3 {
+      margin: 0.5em 0;
+      font-weight: var(--fw-bold);
+      &:is(:hover, :active) {
+        color: var(--Dark-blue);
+      }
+    }
+  }
+}

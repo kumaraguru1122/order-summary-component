@@ -31,7 +31,6 @@ svg {
 button {
   border: none;
   background: transparent;
-  cursor: pointer;
 }
 
 body {
@@ -114,6 +113,7 @@ main {
       
     }
     .cta-1 {
+      cursor: pointer;
       margin: 0.7em 0;
       padding: 1em 1em;
       border-radius: 0.7em;
@@ -126,6 +126,7 @@ main {
       }
     }
     .cta-3 {
+      cursor: pointer;
       margin: 0.5em 0;
       font-weight: var(--fw-bold);
       &:is(:hover, :active) {

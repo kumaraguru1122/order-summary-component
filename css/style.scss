@@ -65,7 +65,7 @@ main {
   border-radius: 1.5em;
   overflow: hidden;
   display: grid;
-  grid-template-rows: auto 1fr;
+  grid-template-rows: max-content 1fr;
   max-width: 440px;
   text-align: center;
   .content {
@@ -98,10 +98,10 @@ main {
       .price {
         grid-column: 2/3;
       }
-      .cta-2 {
-        justify-self: end;
-        grid-row: span 2;
+      
         a {
+          justify-self: end;
+        grid-row: span 2;
           color: var(--Bright-blue);
           font-weight: var(--fw-bold);
           &:is(:hover, :active) {
@@ -110,7 +110,7 @@ main {
           }
         }
         
-      }
+      
     }
     .cta-1 {
       margin: 0.7em 0;

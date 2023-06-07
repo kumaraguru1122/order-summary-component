@@ -66,7 +66,8 @@ main {
   border-radius: 1.5em;
   overflow: hidden;
   display: grid;
-  grid-template-rows: auto 1fr;
+  grid-template-rows: -webkit-max-content 1fr;
+  grid-template-rows: max-content 1fr;
   max-width: 440px;
   text-align: center;
 }
@@ -104,15 +105,13 @@ main {
 .card .content .plan .price {
   grid-column: 2/3;
 }
-.card .content .plan .cta-2 {
+.card .content .plan a {
   justify-self: end;
   grid-row: span 2;
-}
-.card .content .plan .cta-2 a {
   color: var(--Bright-blue);
   font-weight: var(--fw-bold);
 }
-.card .content .plan .cta-2 a:is(:hover, :active) {
+.card .content .plan a:is(:hover, :active) {
   text-decoration: none;
   color: hsla(var(--hover-color));
 }
